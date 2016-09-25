@@ -1,47 +1,15 @@
-
 /**
- * Two.
+ * Three
  * 
- * Type Annotations
- * Interfaces
- * Structural Typing
- * Enums
- * Namespaces
- * 
+ * Modules
+ * ES6 target
  */
 
-namespace Two {
 
-    enum IngredientType {
-        Flour,
-        Liquid,
-        RaisingAgent,
-        Starter,
-        Other
-    }
+import {IngredientType, Ingredient, WeighedIngredient, BakersPercentage, Recipe} from './recipe'
 
-    interface Ingredient {
-        name: string;
-        type: IngredientType;
-    }
-
-    interface WeighedIngredient {
-        name: string;
-        weight: number;
-    }
-
-    interface BakersPercentage {
-        name: string;
-        percentage: number;
-    }
-
-    interface Recipe {
-        name: string;
-        ingredients: Ingredient[];
-        formula: BakersPercentage[];
-    }
-
-    var recipe: Recipe = {
+namespace Three {
+    let recipe: Recipe = {
         name: "Nutella Scones",
         ingredients: [
             { name: "Flour", type: IngredientType.Flour},
@@ -62,8 +30,8 @@ namespace Two {
     }
 
     function calculateIngredientWeights(recipe: Recipe, totalFlourWeight: number): WeighedIngredient[] {
-        var l: number = recipe.formula.length
-        var weights: WeighedIngredient[] = []
+        let l: number = recipe.formula.length
+        let weights: WeighedIngredient[] = []
         for (var i=0; i<l; i++) {
             weights.push({
                 name: recipe.formula[i].name,
@@ -73,10 +41,10 @@ namespace Two {
         return weights;
     }
 
-    export function run(): void {
-        var weights: WeighedIngredient[] = calculateIngredientWeights(recipe, 500)
+    export const run: () => void = () => {
+        let weights: WeighedIngredient[] = calculateIngredientWeights(recipe, 500)
         console.log(weights)
     }
 }
 
-Two.run()
+Three.run()

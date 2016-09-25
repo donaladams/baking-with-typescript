@@ -1,24 +1,28 @@
+/**
+ * One
+ * 
+ * Some plain old Javascript
+ */
 
 
 var recipe = {
     name: "Nutella Scones",
     ingredients: [
-        "Flour",
-        "Buttermilk",
-        "Salt",
-        "Sugar",
-        "Nutella",
-        "Baking Soda"
+        {name: "Flour", type: "Flour"},
+        {name: "Buttermilk", type: "Liquid"},
+        {name: "Salt", type: "Other"},
+        {name: "Sugar", type: "Other"},
+        {name: "Nutella", type: "Other"},
+        {name: "Baking Soda", type: "RaisingAgent"},
     ],
     formula: [
-        {ingredient: "Flour", percentage: 100},
-        {ingredient: "Buttermilk", percentage: 50},
-        {ingredient: "Salt", percentage: 1},
-        {ingredient: "Sugar", percentage: 1},
-        {ingredient: "Nutella", percentage: 15},
-        {ingredient: "Baking Soda", percentage: 0.5}
+        {name: "Flour", percentage: 100},
+        {name: "Buttermilk", percentage: 50},
+        {name: "Salt", percentage: 1},
+        {name: "Sugar", percentage: 1},
+        {name: "Nutella", percentage: 15},
+        {name: "Baking Soda", percentage: 0.5}
     ]
-    
 }
 
 function calculateIngredientWeights(recipe, totalFlourWeight) {

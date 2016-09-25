@@ -3,11 +3,15 @@
       "target": "es5",
       "module": "commonjs",
       "sourceMap": false,
-      "jsx": "react"
+      "jsx": "react",
+      "removeComments": true,
+      "outDir": "build"
   },
   "exclude": [
       "node_modules"
   ],
   "compileOnSave": false,
-  "outDir": "build"
+  "include": [
+      "src/**/*"
+  ]
 }

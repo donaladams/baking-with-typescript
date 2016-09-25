@@ -4,13 +4,14 @@
   "description": "Typescript examples for baking.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "tsc -w --outDir build"
+    "clean": "rm -r build",
+    "watch": "tsc -w"
   },
   "keywords": [],
   "author": "Dónal Adams",
   "license": "ISC",
   "devDependencies": {
+    "lodash": "^4.16.1",
     "typings": "^1.4.0"
   }
 }
