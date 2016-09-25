@@ -1,0 +1,16 @@
+{
+  "name": "baking-with-typescript",
+  "version": "1.0.0",
+  "description": "Typescript examples for baking.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "tsc -w --outDir build"
+  },
+  "keywords": [],
+  "author": "Dónal Adams",
+  "license": "ISC",
+  "devDependencies": {
+    "typings": "^1.4.0"
+  }
+}
