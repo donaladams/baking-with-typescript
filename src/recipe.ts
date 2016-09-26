@@ -12,6 +12,7 @@ export enum IngredientType {
     Liquid,
     RaisingAgent,
     Starter,
+    Fat,
     Other
 }
 

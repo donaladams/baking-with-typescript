@@ -12,6 +12,7 @@
   ],
   "compileOnSave": false,
   "include": [
-      "src/**/*"
+      "src/**/*",
+      "typings/**/*"
   ]
 }

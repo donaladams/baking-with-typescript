@@ -17,6 +17,7 @@ namespace Two {
         Liquid,
         RaisingAgent,
         Starter,
+        Fat,
         Other
     }
 
@@ -44,20 +45,22 @@ namespace Two {
     var recipe: Recipe = {
         name: "Nutella Scones",
         ingredients: [
-            { name: "Flour", type: IngredientType.Flour},
-            { name: "Buttermilk", type: IngredientType.Liquid},
-            { name: "Salt", type: IngredientType.Other},
-            { name: "Sugar", type: IngredientType.Other},
-            { name: "Nutella", type: IngredientType.Other},
-            { name: "Baking Soda", type: IngredientType.RaisingAgent},
+            { name: "Flour", type: IngredientType.Flour },
+            { name: "Buttermilk", type: IngredientType.Liquid },
+            { name: "Salt", type: IngredientType.Other },
+            { name: "Sugar", type: IngredientType.Other },
+            { name: "Nutella", type: IngredientType.Other },
+            { name: "Baking Soda", type: IngredientType.RaisingAgent },
+            { name: "Butter", type: IngredientType.Fat }
         ],
         formula: [
-            {name: "Flour", percentage: 100},
-            {name: "Buttermilk", percentage: 50},
-            {name: "Salt", percentage: 1},
-            {name: "Sugar", percentage: 1},
-            {name: "Nutella", percentage: 15},
-            {name: "Baking Soda", percentage: 0.5}
+            { name: "Flour", percentage: 100 },
+            { name: "Buttermilk", percentage: 50 },
+            { name: "Salt", percentage: 1 },
+            { name: "Sugar", percentage: 1 },
+            { name: "Nutella", percentage: 15 },
+            { name: "Baking Soda", percentage: 0.5 },
+            { name: "Butter", percentage: 10 }
         ]
     }
 
@@ -66,15 +69,16 @@ namespace Two {
         var weights: WeighedIngredient[] = []
         for (var i=0; i<l; i++) {
             weights.push({
-                name: recipe.formula[i].name,
-                weight: recipe.formula[i].percentage * totalFlourWeight / 100
+                name: recipe.ingredients[i].name,
+                weight: recipe.ingredients[i].percentage * totalFlourWeight / 100
             })
         }
         return weights;
     }
 
     export function run(): void {
-        var weights: WeighedIngredient[] = calculateIngredientWeights(recipe, 500)
+        var totalFlourWeight: number = 500
+        var weights: WeighedIngredient[] = calculateIngredientWeights(totalFlourWeight, recipe)
         console.log(weights)
     }
 }

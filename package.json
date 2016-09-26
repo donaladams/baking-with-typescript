@@ -2,7 +2,7 @@
   "name": "baking-with-typescript",
   "version": "1.0.0",
   "description": "Typescript examples for baking.",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "clean": "rm -r build",
     "watch": "tsc -w"
